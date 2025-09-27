@@ -183,6 +183,7 @@ class JellyfinRepositoryImpl(
                 filters = listOf(ItemFilter.IS_FAVORITE),
                 includeItemTypes = listOf(
                     BaseItemKind.MOVIE,
+                    BaseItemKind.VIDEO,
                     BaseItemKind.SERIES,
                     BaseItemKind.EPISODE,
                 ),
@@ -198,6 +199,7 @@ class JellyfinRepositoryImpl(
                 searchTerm = query,
                 includeItemTypes = listOf(
                     BaseItemKind.MOVIE,
+                    BaseItemKind.VIDEO,
                     BaseItemKind.SERIES,
                 ),
                 recursive = true,
@@ -223,7 +225,7 @@ class JellyfinRepositoryImpl(
             jellyfinApi.itemsApi.getResumeItems(
                 jellyfinApi.userId!!,
                 limit = 12,
-                includeItemTypes = listOf(BaseItemKind.MOVIE, BaseItemKind.EPISODE),
+                includeItemTypes = listOf(BaseItemKind.MOVIE, BaseItemKind.VIDEO, BaseItemKind.EPISODE),
             ).content.items
         }
         return items.mapNotNull {

@@ -45,7 +45,7 @@ internal constructor(
         val item = repository.getItem(itemId)
 
         val initialItem = when (item.type) {
-            BaseItemKind.MOVIE -> {
+            BaseItemKind.MOVIE, BaseItemKind.VIDEO -> {
                 val movie = item.toFindroidMovie(repository, database)
 
                 items = listOf(movie)
